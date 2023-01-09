@@ -37,7 +37,8 @@ packages_needed <- c("tidyverse", "flexdashboard",
 
 packages_to_install <- packages_needed[!packages_needed %in%
                                          installed.packages()]
-sapply(packages_to_install, install.packages,dependencies=TRUE)
+sapply(packages_to_install, install.packages,
+       dependencies=TRUE, repos="https://cloud.r-project.org")
 sapply(packages_needed, require, character=TRUE)
 
 knitr::opts_chunk$set(echo = FALSE, 
